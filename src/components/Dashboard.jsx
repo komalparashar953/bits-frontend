@@ -4,7 +4,7 @@ import AuctionCard from './AuctionCard';
 
 // In a real app, this URL should come from env vars
 // Auto-detect URL: if dev, localhost:3001, else relative (/)
-const SOCKET_URL = import.meta.env.DEV ? 'http://localhost:3001' : '/';
+const SOCKET_URL = import.meta.env.VITE_API_URL || (import.meta.env.DEV ? 'http://localhost:3001' : '/');
 
 const Dashboard = () => {
     const [items, setItems] = useState([]);
