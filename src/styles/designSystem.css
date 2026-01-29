@@ -1,0 +1,106 @@
+:root {
+  /* Colors - Premium Dark Theme */
+  --bg-app: #121212;
+  --bg-card: #1E1E1E;
+  --text-primary: #FFFFFF;
+  --text-secondary: #AAAAAA;
+
+  --color-primary: #6C5DD3;
+  /* Vibrant Purple */
+  --color-success: #00E676;
+  /* Bright Green */
+  --color-error: #FF5252;
+  /* Bright Red */
+
+  /* Spacing */
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+
+  /* Typography */
+  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Borders */
+  --radius-md: 12px;
+  --radius-lg: 16px;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-app);
+  color: var(--text-primary);
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 700;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  transition: all 0.2s ease;
+}
+
+/* Animations */
+@keyframes flashGreen {
+  0% {
+    background-color: rgba(0, 230, 118, 0.4);
+  }
+
+  100% {
+    background-color: var(--bg-card);
+  }
+}
+
+@keyframes flashRed {
+  0% {
+    background-color: rgba(255, 82, 82, 0.4);
+  }
+
+  100% {
+    background-color: var(--bg-card);
+  }
+}
+
+.flash-success {
+  animation: flashGreen 0.5s ease-out;
+}
+
+.flash-error {
+  animation: flashRed 0.5s ease-out;
+}
+
+/* Layout Utilities */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-xl);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-xl);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-lg);
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
