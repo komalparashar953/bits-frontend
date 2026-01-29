@@ -70,8 +70,11 @@ const Dashboard = () => {
     }, []);
 
     const handleBid = (itemId, amount) => {
-        if (socket) {
+        if (socket && socket.connected) {
             socket.emit('BID_PLACED', { itemId, amount });
+        } else {
+            console.error("Socket not connected");
+            alert("Cannot place bid: Not connected to server. Please check your connection or try refreshing.");
         }
     };
 
